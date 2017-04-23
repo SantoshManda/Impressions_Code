@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Impressions">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="spring-oxm-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-oxm-3.2.0.RELEASE/spring-oxm-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-tx-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-tx-3.2.0.RELEASE/spring-tx-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-databind-2.6.3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jackson-databind-2.6.3/jackson-databind-2.6.3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-mapper-asl-1.5.0.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jackson-mapper-asl-1.5.0/jackson-mapper-asl-1.5.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-webmvc-portlet-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-webmvc-portlet-3.2.0.RELEASE/spring-webmvc-portlet-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.2-api.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/commons-logging-1.2-api/commons-logging-1.2-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="aspectjweaver-1.6.10.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/aspectjweaver-1.6.10.RELEASE/aspectjweaver-1.6.10.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-jms-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-jms-3.2.0.RELEASE/spring-jms-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-instrument-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-instrument-3.2.0.RELEASE/spring-instrument-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="slf4j-log4j12-1.5.6.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/slf4j-log4j12-1.5.6/slf4j-log4j12-1.5.6">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.9.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/log4j-1.2.9/log4j-1.2.9">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="slf4j-api-1.5.8.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/slf4j-api-1.5.8/slf4j-api-1.5.8">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javassist-3.9.0.GA.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/javassist-3.9.0.GA/javassist-3.9.0.GA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dom4j-1.6.1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/dom4j-1.6.1/dom4j-1.6.1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-expression-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-expression-3.2.0.RELEASE/spring-expression-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-web-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-web-3.2.0.RELEASE/spring-web-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-webmvc-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-webmvc-3.2.0.RELEASE/spring-webmvc-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-context-support-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-context-support-3.2.0.RELEASE/spring-context-support-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-core-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-core-3.2.0.RELEASE/spring-core-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-orm-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-orm-3.2.0.RELEASE/spring-orm-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-test-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-test-3.2.0.RELEASE/spring-test-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="aspectjtools-1.6.10.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/aspectjtools-1.6.10.RELEASE/aspectjtools-1.6.10.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-aspects-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-aspects-3.2.0.RELEASE/spring-aspects-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-jdbc-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-jdbc-3.2.0.RELEASE/spring-jdbc-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-core-2.6.3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jackson-core-2.6.3/jackson-core-2.6.3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-collections-3.1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/commons-collections-3.1/commons-collections-3.1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jaxb-api-2.2.3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jaxb-api-2.2.3/jaxb-api-2.2.3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jta-1.1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jta-1.1/jta-1.1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="aopalliance-1.0.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/aopalliance-1.0/aopalliance-1.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/hibernate3/hibernate3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-beans-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-beans-3.2.0.RELEASE/spring-beans-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mysql-connector-java-5.1.31.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/mysql-connector-java-5.1.31/mysql-connector-java-5.1.31">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="antlr-2.7.6.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/antlr-2.7.6/antlr-2.7.6">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-jpa-2.0-api-1.0.0.Final.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/hibernate-jpa-2.0-api-1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-annotations-2.6.3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jackson-annotations-2.6.3/jackson-annotations-2.6.3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="aspectjrt-1.6.10.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/aspectjrt-1.6.10.RELEASE/aspectjrt-1.6.10.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-context-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-context-3.2.0.RELEASE/spring-context-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-aop-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-aop-3.2.0.RELEASE/spring-aop-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-struts-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-struts-3.2.0.RELEASE/spring-struts-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-instrument-tomcat-3.2.0.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-instrument-tomcat-3.2.0.RELEASE/spring-instrument-tomcat-3.2.0.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="Impressions"/>
+        <property name="java-output-path" value="/Impressions/build/classes"/>
+    </wb-module>
+</project-modules>
