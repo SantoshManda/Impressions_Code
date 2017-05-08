@@ -1,0 +1,61 @@
+
+<section class="section container-fluid">
+  <div class="scrollable">
+ <div class="scrollable-content section">
+  <style type="text/css">
+/* Adjust feedback icon position */
+
+</style>
+  <form name="impressionsform" role="form" ng-submit='login()'>
+    <fieldset>
+
+
+        <div class="form-group has-success has-feedback">
+          <label>Your Name : </label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Enter your name">
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Your Employee ID : </label>
+          <input name="empid" type="number"
+                 class="form-control"
+                 placeholder="Enter your Employee Id ">
+        </div>
+
+        <label>Employee  </label>
+        <div class="form-group has-success has-feedback">
+          
+      <input type="text" class="form-control" ng-model="selectedEmployee" bs-options="state for state in states" placeholder="Enter Employee Full Name" bs-typeahead>
+        
+           <!-- <select class="form-control" name="empname">
+                <option value="">select an employee name</option>
+                <option value="1">Santosh Manda</option>
+                <option value="2">Vilkesh Patel</option>
+                <option value="3">Prawal Pratap Singh</option>
+                <option value="4">Viraj Kamath</option>
+                <option value="5">{{awesomeThings[0]}}</option>
+            </select>-->
+        
+        
+      </div>
+      <label>Time : </label>
+      <div class="form-group has-success has-feedback">
+      <input type="datetime-local" name="meetingtime">
+      </div>
+      <label>Comments :</label>
+    <div class="form-group has-success has-feedback">
+      
+        <textarea name="comments" class="form-control" rows="5" ng-model="comments_section"  id="comment_new">
+        </textarea>
+        
+      </div>
+      <div >
+      <button type="submit" align='right' class="btn btn-danger btn-block">Submit</button>
+    </div>
+    </fieldset>
+  </form>
+ </div>
+</div>
+</section>

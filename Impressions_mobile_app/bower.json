@@ -1,0 +1,17 @@
+{
+  "name": "dox-notes",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.x",
+    "angular-route": "1.x",
+    "mobile-angular-ui": "1.2.x",
+    "font-awesome": "4.2",
+    "bootstrap": "^3.3.7",
+    "angular-strap": "^2.3.12",
+    "angular-motion": "^0.4.4",
+    "moment": "~2.15.1",
+    "cordova": "^3.4.0",
+    "angular-bootstrap": "^2.5.0"
+  }
+}
