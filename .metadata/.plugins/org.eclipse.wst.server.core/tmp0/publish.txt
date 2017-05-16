@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon May 08 19:07:32 IST 2017
+org.eclipse.jst.jee.server\:Impressions_web_services=C\:\\spring-tool-suite-3.8.1.RELEASE-e4.6-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\Impressions_web_services
+org.eclipse.jst.jee.server\:/binary\:C\:\\Git\ Code\ Bases\\Impressions\\Impressions_web_services\\WebContent\\WEB-INF\\lib\\spring-web-3.2.0.RELEASE.jar=C\:\\spring-tool-suite-3.8.1.RELEASE-e4.6-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\Impressions_web_services\\WEB-INF\\lib\\spring-web-3.2.0.RELEASE.jar

@@ -1,0 +1,2 @@
+INDEX VERSION 1.3+C:\Git Code Bases\Impressions\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+150206585.index
