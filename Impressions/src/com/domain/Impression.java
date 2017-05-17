@@ -1,9 +1,9 @@
 package com.domain;
 
-import java.text.ParseException;
+/*import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
+import java.util.TimeZone;*/
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.annotations.Entity;
+/*import org.hibernate.annotations.Entity;*/
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

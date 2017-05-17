@@ -1,14 +1,14 @@
 package com.service;
 
 
-import java.util.List;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.EmployeeDao;
+//import com.dao.EmployeeDao;
 import com.dao.ImpressionDao;
-import com.domain.Employee;
+//import com.domain.Employee;
 import com.domain.Impression;
 
 @Service("impressionService")
@@ -20,14 +20,14 @@ public class ImpressionServiceImpl implements ImpressionService{
 //	@Autowired
 //	private EmployeeService employeeService;
 	
-	@Autowired
-	private EmployeeDao employee_dao;
+	/*@Autowired
+	private EmployeeDao employee_dao;*/
 	
 	@Override
 	public void insert(Impression impression) {	
-		String fname=impression.getEmployee_name()==null ? "" : impression.getEmployee_name();
+		//String fname=impression.getEmployee_name()==null ? "" : impression.getEmployee_name();
 		impression_dao.save(impression);
-		List<Employee> list=employee_dao.getEmployeeByName(fname);
+		/*List<Employee> list=employee_dao.getEmployeeByName(fname);
 		//if (list.isEmpty())
 		//
 		
@@ -36,6 +36,6 @@ public class ImpressionServiceImpl implements ImpressionService{
 			Employee emp1=new Employee();
 			emp1.setFirstName(fname);
 			employee_dao.insert(emp1);
-		}
+		}*/
 		}
 }

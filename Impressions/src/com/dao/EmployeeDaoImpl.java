@@ -1,10 +1,10 @@
 package com.dao;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;*/
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+/*import org.springframework.beans.factory.annotation.Qualifier;*/
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -50,6 +50,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Transactional(readOnly = true)
 	public List<Employee> getAllEmployees() {
 
+		@SuppressWarnings("unchecked")
 		List<Employee> employees = hibernateTemplate.find("from Employee");
 		return employees;
 	}
@@ -61,6 +62,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public List<Employee> getEmployeeByName(String ename) {
+		@SuppressWarnings("unchecked")
 		List<Employee> emp=  hibernateTemplate.find("from Employee e where e.firstName = '"+ename+"'");
 		return emp;
 		

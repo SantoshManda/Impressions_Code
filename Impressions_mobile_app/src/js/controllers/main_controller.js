@@ -121,7 +121,7 @@ angular.module('DoxNotes.controllers.Main', [])
                 }
             };
     //$http.post('http://10.19.5.82:8089/SpringMVCRestDemo/rest/impressions',jsondata,config)
-    $http.post('http://10.75.180.110:8080/Impressions/rest/impressions',jsondata,config)
+    $http.post('http://0.0.0.0:8080/Impressions/rest/impressions',jsondata,config)
     .then(function successCallback(response) {
     // this callback will be called asynchronously
     // when the response is available

@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.annotations.NamedQueries;
-import org.hibernate.annotations.NamedQuery;
+/*import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;*/
 
 
 

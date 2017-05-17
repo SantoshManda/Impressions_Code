@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.domain.Employee;
+/*import com.domain.Employee;*/
 import com.domain.Impression;
 
 @Repository("impressionDao")

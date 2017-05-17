@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.service.EmployeeService;
+/*import com.service.EmployeeService;*/
 import com.service.ImpressionService;
 import com.domain.Impression;
 @Controller
@@ -22,8 +22,8 @@ public class ImpressionController {
 	@Autowired
 	private ImpressionService impressionService;
 	
-	@Autowired
-	private EmployeeService employeeService;
+	/*@Autowired
+	private EmployeeService employeeService;*/
 	
 	@RequestMapping(method = RequestMethod.POST,
 			consumes = { "application/json", "application/xml" })
