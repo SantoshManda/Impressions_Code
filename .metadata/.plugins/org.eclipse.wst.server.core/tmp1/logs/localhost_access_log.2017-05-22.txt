@@ -1,0 +1,12 @@
+127.0.0.1 - - [22/May/2017:18:52:08 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [22/May/2017:18:52:32 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 171
+0:0:0:0:0:0:0:1 - - [22/May/2017:18:54:11 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 67
+0:0:0:0:0:0:0:1 - - [22/May/2017:18:54:33 +0530] "GET /Impressions/rest/employees HTTP/1.1" 200 298
+0:0:0:0:0:0:0:1 - - [22/May/2017:18:54:47 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 67
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:10:25 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 12193
+127.0.0.1 - - [22/May/2017:19:19:39 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:19:59 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 11926
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:20:55 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 10255
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:22:38 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 10282
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:23:49 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 10282
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:24:05 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 8927

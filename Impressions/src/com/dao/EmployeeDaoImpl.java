@@ -64,7 +64,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public List<Employee> getEmployeeByName(String ename) {
 		@SuppressWarnings("unchecked")
 		List<Employee> emp=  hibernateTemplate.find("from Employee e where e.firstName = '"+ename+"'");
-		return emp;
-		
+		return emp;	
 	}
 }

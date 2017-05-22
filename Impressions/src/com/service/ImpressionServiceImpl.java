@@ -1,6 +1,8 @@
 package com.service;
 
 
+import java.util.List;
+
 //import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.dao.ImpressionDao;
 //import com.domain.Employee;
 import com.domain.Impression;
+import com.domain.ImpressionCount;
 
 @Service("impressionService")
 public class ImpressionServiceImpl implements ImpressionService{
@@ -38,4 +41,11 @@ public class ImpressionServiceImpl implements ImpressionService{
 			employee_dao.insert(emp1);
 		}*/
 		}
+	
+
+	@Override
+	public List<ImpressionCount> getImpressionsCount() {
+		// TODO Auto-generated method stub
+		return impression_dao.getImpressionCount();
+	}
 }

@@ -27,6 +27,8 @@
 	 			<value>com.domain.Employee</value>
 	 			<value>com.domain.EmployeeList</value>
 	 			<value>com.domain.Impression</value>
+	 			<value>com.domain.ImpressionCount</value>
+	 			<value>com.domain.ImpressionsList</value>
 	 		</array>
 	 	</property>
 	</bean>
