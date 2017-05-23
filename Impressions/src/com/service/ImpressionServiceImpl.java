@@ -44,8 +44,13 @@ public class ImpressionServiceImpl implements ImpressionService{
 	
 
 	@Override
-	public List<ImpressionCount> getImpressionsCount() {
-		// TODO Auto-generated method stub
+	public List<ImpressionCount> getImpressionsCount() {	
 		return impression_dao.getImpressionCount();
+	}
+
+
+	@Override
+	public List<Impression> getImpressionByEmpid(int eid) {	
+		return impression_dao.getImpressionByEmpId(eid);
 	}
 }

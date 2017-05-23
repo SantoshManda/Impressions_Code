@@ -2,13 +2,15 @@ package com.rest;
 
 import java.util.List;
 import com.domain.ImpressionCount;
-import com.domain.ImpressionsList;
+import com.domain.ImpressionList;
+import com.domain.ImpressionsCountList;
 
 //import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /*import com.service.EmployeeService;*/
 import com.service.ImpressionService;
+//import com.domain.Employee;
 import com.domain.Impression;
 @Controller
 @RequestMapping("/impressions")
@@ -29,11 +32,21 @@ public class ImpressionController {
 	
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
 	@ResponseBody
-	public ImpressionsList getAllImpressions() {
+	public ImpressionsCountList getAllImpressions() {
 		List<ImpressionCount> Impressions = impressionService.getImpressionsCount();
-		ImpressionsList I = new ImpressionsList();
+		ImpressionsCountList I = new ImpressionsCountList();
 		I.setImpressions(Impressions);
 		return I;
+	}
+	
+	@RequestMapping(value = "{id}", 
+			method = RequestMethod.GET, 
+			produces = { "application/json", "application/xml" })
+	@ResponseBody
+	public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid) {
+		ImpressionList imp = new ImpressionList();
+		imp.setImpressions(impressionService.getImpressionByEmpid(eid));
+		return imp;
 	}
 	
 	/*@Autowired

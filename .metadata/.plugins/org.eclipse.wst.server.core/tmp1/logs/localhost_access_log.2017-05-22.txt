@@ -10,3 +10,8 @@
 0:0:0:0:0:0:0:1 - - [22/May/2017:19:22:38 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 10282
 0:0:0:0:0:0:0:1 - - [22/May/2017:19:23:49 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 10282
 0:0:0:0:0:0:0:1 - - [22/May/2017:19:24:05 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 8927
+127.0.0.1 - - [22/May/2017:19:24:38 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:24:56 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 500 14590
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:37:31 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 340
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:37:49 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 717
+0:0:0:0:0:0:0:1 - - [22/May/2017:19:53:33 +0530] "GET /Impressions/rest/impressions HTTP/1.1" 200 717

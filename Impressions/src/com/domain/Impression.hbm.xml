@@ -8,6 +8,7 @@
     		<id name="id" column="impression_id">
     			<generator class="increment" />
     		</id>
+    		<property name="eid" column="eid" />
     		<property name="employee_name" column="employee_name" />
     		<property name="comment" column="comment" />
     		<property name="created_by" column="created_by" />

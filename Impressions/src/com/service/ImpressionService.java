@@ -8,5 +8,5 @@ public interface ImpressionService {
 	
 	List<ImpressionCount> getImpressionsCount();
 	void insert(Impression impression);
-	
+	List<Impression> getImpressionByEmpid(int eid);
 }

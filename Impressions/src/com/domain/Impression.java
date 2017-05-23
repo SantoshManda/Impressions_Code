@@ -26,14 +26,18 @@ public class Impression {
 	@XmlAttribute(name = "id")
 	private int id;
 	
+	@XmlElement(name = "employee_id")
+	private int eid;
 	@XmlElement(name = "employee_name")
 	private String employee_name;
 	@XmlElement(name = "comment")
 	private String comment;
+	
+
 	@XmlElement(name = "created_by")
 	private String created_by;
 	@XmlElement(name = "created_by_employee_id")
-	private String created_by_empid;
+	private int created_by_empid;
 	
 	@XmlElement(name = "impression_time")
 	@JsonFormat
@@ -48,12 +52,13 @@ public class Impression {
 	
 	public Impression(){}
 	
-	public Impression(int id,String Employee_Name, String Comment,Timestamp Impression_time,String Created_by,String Created_by_empid)
+	public Impression(int id,String Employee_Name,int eid, String Comment,Timestamp Impression_time,String Created_by,int Created_by_empid)
 	{
 		
 		this.id=id;
 		this.employee_name=Employee_Name;
 		this.comment=Comment;
+		this.eid = eid;
 		//this.impression_time=Impression_time;
 		//sdf.setTimeZone(TimeZone.getTimeZone("IST")); 
 		this.impression_time=Impression_time;
@@ -71,7 +76,14 @@ public class Impression {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public int getEid() {
+		return eid;
+	}
 
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
 	public String getEmployee_name() {
 		return employee_name;
 	}
@@ -96,11 +108,11 @@ public class Impression {
 		this.created_by = created_by;
 	}
 
-	public String getCreated_by_empid() {
+	public int getCreated_by_empid() {
 		return created_by_empid;
 	}
 
-	public void setCreated_by_empid(String created_by_empid) {
+	public void setCreated_by_empid(int created_by_empid) {
 		this.created_by_empid = created_by_empid;
 	}
 
@@ -114,7 +126,7 @@ public class Impression {
 
 	@Override
 	public String toString() {
-		return "Impression [id=" + id + ", employee_name=" + employee_name + ", comment=" + comment + ", created_by="
+		return "Impression [id=" + id + " , employee_id = "+ eid +", employee_name=" + employee_name + ", comment=" + comment + ", created_by="
 				+ created_by + ", created_by_empid=" + created_by_empid + ", impression_time=" + impression_time + "]";
 	}
 	

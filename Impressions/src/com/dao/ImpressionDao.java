@@ -10,5 +10,6 @@ public interface ImpressionDao {
 	
 	List<ImpressionCount> getImpressionCount();
 	void save(Impression impression);
+	List<Impression> getImpressionByEmpId(int eid);
 	//void saveEmployee(Employee employee);
 }
