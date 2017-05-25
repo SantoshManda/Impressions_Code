@@ -1,14 +1,24 @@
 package com.dao;
 
+import java.util.Date;
 import java.sql.SQLException;
 //import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.Criteria;
 //import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 //import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.StringType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +62,7 @@ public class ImpressionDaoImpl implements ImpressionDao{
 		});
 		
 		return resultList;
-		/*ImpressionCount x = new ImpressionCount();
+		/*ImpressionCount x = new ImpreossionCount();
 		x.setEid(1);
 		x.setEname("Santosh");
 		x.setCount(15);
@@ -61,10 +71,30 @@ public class ImpressionDaoImpl implements ImpressionDao{
 		return l;*/
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Impression> getImpressionByEmpId(int eid) {
-		@SuppressWarnings("unchecked")
-		List<Impression> imp=  hibernateTemplate.find("from Impression i where i.eid = '"+eid+"'");
+	public List<Impression> getImpressionByEmpId(int eid , String from_time , String to_time) {
+		Date from = null;
+		try {
+			from = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a").parse(from_time);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		Date to = null;
+		try {
+			to = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a").parse(to_time);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		Criteria c = hibernateTemplate.getSessionFactory().openSession().createCriteria(Impression.class);
+		@SuppressWarnings("unused")
+		Transaction tx = hibernateTemplate.getSessionFactory().getCurrentSession().beginTransaction();
+		c.add(Restrictions.eq("eid", eid));
+		//c.add(Restrictions.sqlRestriction("trunc(impressions_time) between "+from+" and "+to));
+		c.add(Restrictions.between("impression_time",from,to));
+		//c.add(Restrictions.le("impressions_time", to));
+		List<Impression> imp= (List<Impression>) c.list();//hibernateTemplate.find("from Impression i where i.eid = '"+eid+"'"+"and i.impression_time between '"+from +"' and '"+to+"'");
+	//	tx.commit();
 		return imp;
 	}
 

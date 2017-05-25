@@ -50,7 +50,7 @@ public class ImpressionServiceImpl implements ImpressionService{
 
 
 	@Override
-	public List<Impression> getImpressionByEmpid(int eid) {	
-		return impression_dao.getImpressionByEmpId(eid);
+	public List<Impression> getImpressionByEmpid(int eid,String from , String to) {	
+		return impression_dao.getImpressionByEmpId(eid,from,to);
 	}
 }

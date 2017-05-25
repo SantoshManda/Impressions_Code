@@ -1,5 +1,7 @@
 package com.rest;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 import com.domain.ImpressionCount;
 import com.domain.ImpressionList;
@@ -39,13 +41,15 @@ public class ImpressionController {
 		return I;
 	}
 	
-	@RequestMapping(value = "{id}", 
+	@RequestMapping(value = "{id}/{from}/{to}", 
 			method = RequestMethod.GET, 
 			produces = { "application/json", "application/xml" })
 	@ResponseBody
-	public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid) {
+	public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid,@PathVariable("from") String from ,@PathVariable("to") String to) throws UnsupportedEncodingException {
 		ImpressionList imp = new ImpressionList();
-		imp.setImpressions(impressionService.getImpressionByEmpid(eid));
+		String f = URLDecoder.decode(from,"UTF-8");
+		String t = URLDecoder.decode(to,"UTF-8");
+		imp.setImpressions(impressionService.getImpressionByEmpid(eid,f,t));
 		return imp;
 	}
 	

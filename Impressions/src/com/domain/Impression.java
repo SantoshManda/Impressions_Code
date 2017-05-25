@@ -37,6 +37,7 @@ public class Impression {
 	@XmlElement(name = "created_by")
 	private String created_by;
 	@XmlElement(name = "created_by_employee_id")
+	@Column(nullable=true)
 	private int created_by_empid;
 	
 	@XmlElement(name = "impression_time")
