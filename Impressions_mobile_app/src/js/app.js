@@ -23,6 +23,17 @@ angular.module('DoxNotes', [
     templateUrl:'home_page.html', 
   controller: 'MainController',
   reloadOnSearch: false})
+  .when('/reports', {
+    resolve : {
+      "check" : function($location,$rootScope){
+        if(!$rootScope.logged_in){
+          $location.path('/');
+        }
+      }
+    },
+    templateUrl:'impression_reports.html', 
+  controller: 'ReportsController',
+  reloadOnSearch: false})
   .otherwise({
     redirectTo : '/'
   });

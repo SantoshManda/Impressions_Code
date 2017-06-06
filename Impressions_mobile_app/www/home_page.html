@@ -14,23 +14,23 @@
     <fieldset>
 
 
-        <div class="form-group has-success has-feedback" data-tap-disabled="true">
-          <label>Your Name : </label>
+        <!-- <div class="form-group has-success has-feedback" data-tap-disabled="true">
+          <label>Your Name : </label> -->
          <!--  <input type="text" ng-blur="isfocus_created_by" class="form-control" ng-model="createdBy" bs-options="employee.firstName for employee in tempData" placeholder="Enter Your Full Name" bs-typeahead> -->
-         <input type="text" placeholder="Enter Your Full Name" ng-model="createdBy" uib-typeahead="employee.firstName for employee in tempData" class="form-control">
+        <!--  <input type="text" placeholder="Enter Your Full Name" ng-model="createdBy" uib-typeahead="employee.firstName for employee in tempData" class="form-control"> -->
           <!--<input type="text"
                  class="form-control"
                  placeholder="Enter your name">-->
-        </div>
+        <!-- </div> -->
 
-        <div class="form-group has-success has-feedback">
+        <!-- <div class="form-group has-success has-feedback">
           <label>Your Employee ID : </label>
           <input name="empid" ng-blur="isfocus_empid" type="number" ng-model="createdByEmpId"
                  class="form-control"
                  placeholder="Enter your Employee Id ">
-        </div>
+        </div> -->
 
-        <label>Employee  </label>
+        <label>Please Enter Employee Name</label>
         <div class="form-group has-success has-feedback" data-tap-disabled="true">
           
       <!-- <input type="text" class="form-control" ng-blur="isfocus_employee_name" ng-model="selectedEmployee" bs-options="employee.firstName for employee in tempData" placeholder="Enter Employee Full Name" bs-typeahead> -->
@@ -48,7 +48,7 @@
         
         
       </div>
-      <label>Time : </label>
+      <label>Impression Time : </label>
       <div class="form-group has-success has-feedback">
       <input type="datetime-local" name="meetingtime" ng-model="meetingTime">
       </div>

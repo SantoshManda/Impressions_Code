@@ -1,5 +1,5 @@
 angular.module('DoxNotes.controllers.Main', [])
-.controller('MainController', function($scope,$http,$location){
+.controller('MainController', function($scope,$http,$location,EmployeeDetails,$rootScope){
 //http://localhost:8089/SpringMVCRestDemo/rest/employees	
   //$http.get('http://10.19.5.82:8089/SpringMVCRestDemo/rest/employees')
 	//$http.get('http://10.75.180.110:8080/Impressions/rest/employees')
@@ -25,7 +25,7 @@ angular.module('DoxNotes.controllers.Main', [])
    	//console.log(meeting_date);
     $scope.validate = function(){
     	
-    	if(this.createdBy != null)
+    	/*if(this.createdBy != null)
    	{
    		if(this.createdBy.firstName == null)
    		{
@@ -42,32 +42,50 @@ angular.module('DoxNotes.controllers.Main', [])
    		$scope.isfocus_created_by = true;
    		
 
-   	}
+   	}*/
+
+
 
    	if(this.selectedEmployee != null)
-   	{
-   		if(this.selectedEmployee.firstName == null)
-   		{
-   		var employe_name = this.selectedEmployee;
-   		}
-   		else
-   		{
-   		var employe_name = this.selectedEmployee.firstName;
-   		}
+   	{	
+      //console.log($scope.employees);
+        for(var i = 0 ; i < $scope.employees.length; i++)
+        {
+      /*alert($scope.employees[i].firstName);
+      alert($scope.employees[i].eid);*/
+        if($scope.employees[i].firstName == this.selectedEmployee)
+        {
+         // alert($scope.employees[i].firstName);
+        $rootScope.eid = $scope.employees[i].eid;
+        $scope.matched = true;
+        break;
+        }
+        else
+        {
+        $scope.matched = false;
+        }
+
+      }  
+     // alert($scope.matched);
+      if($scope.matched)
+      var employe_name = this.selectedEmployee;
+      else
+      alert("Please Select Valid Name from List");
    	}
    	else
    	{
    		alert("Please enter Employee Name : ");
    		$scope.isfocus_employee_name = true;
-   		
    	}
 
-   if(this.createdByEmpId == null)
+
+
+   /*if(this.createdByEmpId == null)
    {
    	alert("Please enter your ID : ");
    	$scope.isfocus_empid = true;
    	
-   }	
+   }	*/
 
    if(this.comments_section == null)
    {
@@ -79,7 +97,7 @@ angular.module('DoxNotes.controllers.Main', [])
    if(this.meetingTime == null)
    {
    	var date = new Date();
-    console.log(date);
+   // console.log(date);
    	var meeting_date=moment(date.toISOString()).format('DD-MM-YYYY hh:mm:ss a');
    	//console.log(meeting_date);
    }
@@ -92,12 +110,12 @@ angular.module('DoxNotes.controllers.Main', [])
   // console.log($scope.isfocus_employee_name);
    //console.log($scope.isfocus_empid);
   // console.log($scope.isfocus_comments);
-   if(!($scope.isfocus_created_by || $scope.isfocus_employee_name || $scope.isfocus_empid || $scope.isfocus_comments))
+   if(!( $scope.isfocus_employee_name ||  $scope.isfocus_comments))
    {
-   	$scope.login(employe_name,this.comments_section,created_by,this.createdByEmpId,meeting_date);
+   	$scope.login(employe_name,$rootScope.eid,this.comments_section,$rootScope.name,$rootScope.emp_id,meeting_date);
    }
  }
-    $scope.login = function(employe_name,comments_section,created_by,createdByEmpId,meeting_date){
+    $scope.login = function(employe_name,eid,comments_section,created_by,createdByEmpId,meeting_date){
     	$scope.showsuccess=false;
     	$scope.showerror=false;
     		
@@ -110,7 +128,9 @@ angular.module('DoxNotes.controllers.Main', [])
     //$scope.jsondata=JSON.stringify(obj);		
     //alert('hi');
    // console.log(moment(this.meetingTime).format('DD-MM-YYYY hh:mm:ss'));
-    var jsondata="{\"employee_name\": \""+employe_name+"\",\"comment\":\""+comments_section+"\",\"created_by\": \""+created_by+"\",\"created_by_empid\": \""+createdByEmpId+"\",\"impression_time\": \""+meeting_date+"\"}";
+   
+
+    var jsondata="{\"employee_name\": \""+employe_name+"\",\"eid\":"+eid+",\"comment\":\""+comments_section+"\",\"created_by\": \""+created_by+"\",\"created_by_empid\": \""+createdByEmpId+"\",\"impression_time\": \""+meeting_date+"\"}";
 	console.log(jsondata);
 	//console.log(this.selectedEmployee);
 	//console.log(this.createdBy);
@@ -136,7 +156,7 @@ angular.module('DoxNotes.controllers.Main', [])
     //$scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
     
 
-    $scope.employees = [
+    $scope.employees = EmployeeDetails.getEmployees();/*[
 {
 "eid": 1,
 "firstName": "santosh"
@@ -157,7 +177,7 @@ angular.module('DoxNotes.controllers.Main', [])
 "eid": 5,
 "firstName": "Santosh Manda"
 }
-];	
+];	*/
 $scope.tempData=$scope.employees;
-console.log($scope.employees);
+//console.log($scope.employees);
 });
