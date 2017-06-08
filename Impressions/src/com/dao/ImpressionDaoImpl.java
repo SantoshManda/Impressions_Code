@@ -73,7 +73,8 @@ public class ImpressionDaoImpl implements ImpressionDao{
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Impression> getImpressionByEmpId(int eid , String from_time , String to_time) {
+	/*public List<Impression> getImpressionByEmpId(int eid , String from_time , String to_time) {*/
+		public List<Impression> getImpressionByEmpId(int eid ) {
 		/*Date from = null;
 		try {
 			from = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(from_time);
@@ -89,8 +90,8 @@ public class ImpressionDaoImpl implements ImpressionDao{
 		Criteria c = hibernateTemplate.getSessionFactory().openSession().createCriteria(Impression.class);
 		@SuppressWarnings("unused")
 		Transaction tx = hibernateTemplate.getSessionFactory().getCurrentSession().beginTransaction();
-		//c.add(Restrictions.eq("eid", eid));
-		c.add(Restrictions.sqlRestriction("eid = "+eid+" and impression_time between STR_TO_DATE('"+from_time+"','%d-%m-%Y %H:%i:%s') and STR_TO_DATE('"+to_time+"','%d-%m-%Y %H:%i:%s')"));
+		c.add(Restrictions.eq("eid", eid));
+		//c.add(Restrictions.sqlRestriction("eid = "+eid+" and impression_time between STR_TO_DATE('"+from_time+"','%d-%m-%Y %H:%i:%s') and STR_TO_DATE('"+to_time+"','%d-%m-%Y %H:%i:%s')"));
 		//c.add(Restrictions.between("impression_time",from,to));
 		//c.add(Restrictions.le("impressions_time", to));
 		List<Impression> imp= (List<Impression>) c.list();//hibernateTemplate.find("from Impression i where i.eid = '"+eid+"'"+"and i.impression_time between '"+from +"' and '"+to+"'");

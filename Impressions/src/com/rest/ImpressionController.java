@@ -41,15 +41,18 @@ public class ImpressionController {
 		return I;
 	}
 	
-	@RequestMapping(value = "{id}/{from}/{to}", 
+	/*@RequestMapping(value = "{id}/{from}/{to}", */
+	@RequestMapping(value = "{id}",
 			method = RequestMethod.GET, 
 			produces = { "application/json", "application/xml" })
 	@ResponseBody
-	public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid,@PathVariable("from") String from ,@PathVariable("to") String to) throws UnsupportedEncodingException {
+	/*public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid,@PathVariable("from") String from ,@PathVariable("to") String to) throws UnsupportedEncodingException {*/
+		public ImpressionList getImpressionByEmpId(@PathVariable("id") int eid) throws UnsupportedEncodingException {	
 		ImpressionList imp = new ImpressionList();
-		String f = URLDecoder.decode(from,"UTF-8");
-		String t = URLDecoder.decode(to,"UTF-8");
-		imp.setImpressions(impressionService.getImpressionByEmpid(eid,f,t));
+		/*String f = URLDecoder.decode(from,"UTF-8");
+		String t = URLDecoder.decode(to,"UTF-8");*/
+		/*imp.setImpressions(impressionService.getImpressionByEmpid(eid,f,t));*/
+		imp.setImpressions(impressionService.getImpressionByEmpid(eid));
 		return imp;
 	}
 	

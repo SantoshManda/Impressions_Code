@@ -28,8 +28,9 @@ var config = {
   },
   vendor: {
     js: [
-      './bower_components/angular/angular.js',
-      './bower_components/angular-route/angular-route.js',
+      './bower_components/angular/angular.min.js',
+      './bower_components/angular-route/angular-route.min.js',
+      './bower_components/angular-animate/angular-animate.min.js',
       './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js',
      // './bower_components/angular-strap/dist/angular-strap.min.js',
      // './bower_components/angular-strap/dist/angular-strap.tpl.min.js',

@@ -1,5 +1,6 @@
 angular.module('DoxNotes', [
   'ngRoute',
+  'ngAnimate',
   'ngTouch',
   'mobile-angular-ui',
   'DoxNotes.controllers.Main',
@@ -27,7 +28,7 @@ angular.module('DoxNotes', [
     resolve : {
       "check" : function($location,$rootScope){
         if(!$rootScope.logged_in){
-          $location.path('/');
+          $location.path('/reports');
         }
       }
     },

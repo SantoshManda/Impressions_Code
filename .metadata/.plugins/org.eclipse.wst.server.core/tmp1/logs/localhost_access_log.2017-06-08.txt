@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [08/Jun/2017:19:21:44 +0530] "GET /Impressions/rest/impressions/5/18-09-2016+00%3A30%3A00/18-09-2016+17%3A30%3A00 HTTP/1.1" 200 379
+0:0:0:0:0:0:0:1 - - [08/Jun/2017:19:22:02 +0530] "GET /Impressions/rest/impressions/1 HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [08/Jun/2017:19:22:08 +0530] "GET /Impressions/rest/impressions/1 HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [08/Jun/2017:19:22:09 +0530] "GET /Impressions/rest/impressions/1 HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [08/Jun/2017:19:22:22 +0530] "GET /Impressions/rest/impressions/1/ HTTP/1.1" 404 949

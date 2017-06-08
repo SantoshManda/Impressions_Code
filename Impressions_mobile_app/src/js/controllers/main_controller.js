@@ -13,11 +13,18 @@ angular.module('DoxNotes.controllers.Main', [])
     // or server returns response with an error status.
   //});
 
+
 	$scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+     $scope.logout = function($rootScope,$location){
+ // $rootScope.logged_in = false ;
+  alert("hi");
+ // $location.path('#!/');
+}
 //var date = new Date();
 //var tzoffset = (new Date()).getTimezoneOffset() * 60000;
 //var date=(new Date(Date.now() - tzoffset)).toISOString().slice(0,-1);
@@ -115,6 +122,9 @@ angular.module('DoxNotes.controllers.Main', [])
    	$scope.login(employe_name,$rootScope.eid,this.comments_section,$rootScope.name,$rootScope.emp_id,meeting_date);
    }
  }
+
+
+
     $scope.login = function(employe_name,eid,comments_section,created_by,createdByEmpId,meeting_date){
     	$scope.showsuccess=false;
     	$scope.showerror=false;
