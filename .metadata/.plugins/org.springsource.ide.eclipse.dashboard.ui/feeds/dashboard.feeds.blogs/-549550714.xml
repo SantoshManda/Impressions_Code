@@ -5,7 +5,66 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-06-08T14:02:47Z</updated>
+  <updated>2017-06-08T15:04:08Z</updated>
+  <entry>
+    <title>Spring Boot 1.5.4 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/06/08/spring-boot-1-5-4-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2017-06-08:2944</id>
+    <updated>2017-06-08T15:04:08Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, I am pleased to announce that Spring Boot &lt;code&gt;1.5.4&lt;/code&gt; has been released and is available now from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Spring Boot 1.5.4 adds &lt;a href="https://github.com/spring-projects/spring-boot/milestone/86?closed=1"&gt;over 60 fixes, improvements and 3rd party dependency updates&lt;/a&gt; to the 30 issues &lt;a href="https://spring.io/blog/2017/06/08/spring-boot-1-4-7-available-now"&gt;fixed in Spring Boot 1.4.7&lt;/a&gt;. Thanks to all that have contributed!&lt;/p&gt;
+&lt;p&gt;This release is a recommended upgrade for all users, in a particular due to &lt;a href="https://spring.io/blog/2017/06/08/cve-2017-4995-spring-security-4-2-3-released"&gt;CVE-2017-4995&lt;/a&gt; that was recently fixed in Spring Security 4.2.3.&lt;/p&gt;&lt;h3&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next?&lt;/h3&gt;
+&lt;p&gt;We are ramping down with a second release candidate of Spring Framework 5 next week and we will follow as expected with a second milestone of Spring Boot 2. If you want to try what we have for Spring Boot 2 already, and we’d love to hear your feedback if you do, please go to &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; and select Spring Boot &lt;code&gt;2.0.0.BUILD-SNAPSHOT&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask at &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Integration 4.3.10 is Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/06/08/spring-integration-4-3-10-is-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2017-06-08:2947</id>
+    <updated>2017-06-08T14:25:02Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring Integration team, I am pleased to announce that the &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10121&amp;amp;version=16061"&gt;4.3.10.RELEASE&lt;/a&gt; of Spring Integration is now available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This release contains a few important bug fixes as well as a couple of improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;One of the most interesting feature is customized Jackson &lt;code&gt;ObjectMapper&lt;/code&gt; which is aware of &lt;code&gt;Message&lt;/code&gt; and &lt;code&gt;MessageHeaders&lt;/code&gt; serialization/deserialization to/from JSON.
+This functionality is useful in those components which allow to configure custom serializer/deserializer, for example &lt;code&gt;RedisMessageStore&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;RedisMessageStore store = new RedisMessageStore(redisConnectionFactory);
+
+ObjectMapper mapper = JacksonJsonUtils.messagingAwareMapper();
+
+GenericJackson2JsonRedisSerializer serializer =
+                             new GenericJackson2JsonRedisSerializer(mapper);
+store.setValueSerializer(serializer);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And messages and message groups will be stored in Redis in the JSON format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This version will be the default version with the upcoming Spring Boot &lt;code&gt;1.4.7&lt;/code&gt; and &lt;code&gt;1.5.4&lt;/code&gt; releases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Also this version with its new &lt;a href="https://jira.spring.io/browse/INT-4257"&gt;ErrorMessagePublisher&lt;/a&gt; foundation is important for error handling functionality in the upcoming &lt;a href="http://cloud.spring.io/spring-cloud-stream/"&gt;Spring Cloud Stream&lt;/a&gt; &lt;code&gt;Ditmars&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;Contributions&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring AMQP 1.6.10 and 1.7.3 Available</title>
     <link rel="alternate" href="https://spring.io/blog/2017/06/08/spring-amqp-1-6-10-and-1-7-3-available" />
@@ -60,64 +119,22 @@
     <id>tag:spring.io,2017-06-08:2941</id>
     <updated>2017-06-08T13:23:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 4.2.3 which fixes CVE-2017-4995. Users are encouraged to update immediately.&lt;/p&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 4.2.3 which fixes &lt;a href="https://pivotal.io/security/cve-2017-4995"&gt;CVE-2017-4995&lt;/a&gt;. Users are encouraged to update immediately.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;For additional changes included in this, refer to the &lt;a href="https://github.com/spring-projects/spring-security/issues?q=is%3Aclosed+milestone%3A4.2.3"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="cve-2017-4995-description"&gt;&lt;a class="anchor" href="#cve-2017-4995-description"&gt;&lt;/a&gt;CVE-2017-4995 Description&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Security configures Jackson in a way that could lead to arbitrary code execution. In order for this to occur all of the following must be true:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Security&amp;#8217;s Jackson support is being leveraged (or otherwise enabling Jackson&amp;#8217;s default typing)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Jackson is used to deserialize data that is not trusted&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;There is a “serialization gadget” that allows code execution present on the classpath&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Jackson provides a blacklisting approach to protecting against this type of attack, but Spring Security should be as proactive against blocking unknown “serialization gadgets” when Spring Security enables default typing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="affected-pivotal-products-and-versions"&gt;&lt;a class="anchor" href="#affected-pivotal-products-and-versions"&gt;&lt;/a&gt;Affected Pivotal Products and Versions&lt;/h3&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Security 4.2.0.RELEASE - 4.2.2.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Security 5.0.0.M1&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="mitigation"&gt;&lt;a class="anchor" href="#mitigation"&gt;&lt;/a&gt;Mitigation&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Users of affected versions should apply the following mitigation or upgrade:
-Releases that have fixed this issue include:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Security: 4.2.3.RELEASE+&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Security: 5.0.0.M2+&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The fix ensures that by default only explicitly mapped classes will be deserialized. If users explicitly opt into default typing, the previous potentially dangerous configuration is restored.&lt;/p&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+Spring Boot users can update to &lt;a href="https://spring.io/blog/2017/06/08/spring-boot-1-5-4-available-now"&gt;Spring Boot 1.5.4&lt;/a&gt; or &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/reference/htmlsingle/#howto-customize-dependency-versions"&gt;customize the Spring Security version&lt;/a&gt; using &lt;code&gt;spring-security.version&lt;/code&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
@@ -125,7 +142,6 @@ Releases that have fixed this issue include:&lt;/p&gt;
 |
 &lt;a href="http://docs.spring.io/spring-security/site/docs/current/guides/html5/"&gt;Guides&lt;/a&gt;
 | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;</content>
   </entry>
   <entry>
@@ -179,10 +195,10 @@ Releases that have fixed this issue include:&lt;/p&gt;
       <name>Stéphane Nicoll</name>
     </author>
     <id>tag:spring.io,2017-06-08:2942</id>
-    <updated>2017-06-08T11:16:04Z</updated>
+    <updated>2017-06-08T11:16:00Z</updated>
     <content type="html">&lt;p&gt;It is my pleasure to announce that Spring Boot &lt;code&gt;1.4.7&lt;/code&gt; is now available from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Spring Boot 1.4.7 includes &lt;a href="https://github.com/spring-projects/spring-boot/milestone/87?closed=1"&gt;over 30 changes, mostly a selection of dependency upgrades and documentation improvements&lt;/a&gt;. Thanks to all that have contributed!&lt;/p&gt;
-&lt;p&gt;We expect Spring Boot &lt;code&gt;1.4.7&lt;/code&gt; to be the latest maintenance release in the &lt;code&gt;1.4&lt;/code&gt; line. If you haven&amp;rsquo;t upgraded to &lt;code&gt;1.5.x&lt;/code&gt; yet, we advise you to do so as soon as possible.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;We expect Spring Boot &lt;code&gt;1.4.7&lt;/code&gt; to be the last maintenance release in the &lt;code&gt;1.4&lt;/code&gt; line. If you haven&amp;rsquo;t upgraded to &lt;code&gt;1.5.x&lt;/code&gt; yet, we advise you to do so as soon as possible.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.4.7.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
@@ -856,57 +872,5 @@ Rather than fixing the compilation error at face value, you&amp;#8217;d need to 
 &lt;a href="#_footnoteref_1"&gt;1&lt;/a&gt;. As a reminder, Reactor 3 is not entirely conforming to the &lt;code&gt;MAJOR.MINOR.PATCH&lt;/code&gt; scheme of semantic versioning, but &lt;strong&gt;rather follows a &lt;code&gt;X.MAJOR.MINOR&lt;/code&gt; versioning scheme&lt;/strong&gt;. &lt;code&gt;X&lt;/code&gt; incrementing means a major architectural and API do-over, a &lt;code&gt;MAJOR&lt;/code&gt; can contain important new features and breaking changes while &lt;code&gt;MINOR&lt;/code&gt; are all binary and API compatible within the same MAJOR (although they can contain internals changes and new features in addition to bugfixes)
 &lt;/div&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.0.0 M1 Available Now</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/05/16/spring-boot-2-0-0-m1-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2017-05-16:2927</id>
-    <updated>2017-05-16T10:28:15Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the first milestone of Spring Boot 2 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes over &lt;a href="https://github.com/spring-projects/spring-boot/milestone/53?closed=1"&gt;300 issues and pull requests&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;This first milestone builds on and requires &lt;a href="https://spring.io/blog/2017/05/08/spring-framework-5-0-goes-rc1"&gt;Spring Framework 5.0.RC1&lt;/a&gt;. There are a number of nice refinements in Spring Framework 5 including extensive support for building reactive applications.&lt;/p&gt;
-&lt;p&gt;Highlights of this first milestone include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;A &lt;a href="https://spring.io/blog/2017/04/05/spring-boot-s-new-gradle-plugin"&gt;complete rewrite of the Gradle plugin&lt;/a&gt; (including a &lt;a href="http://docs.spring.io/spring-boot/docs/2.0.0.M1/gradle-plugin/reference/html/"&gt;dedicated guide&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Support of reactive web applications development using WebFlux or WebFlux.fn: dedicated &lt;code&gt;spring-boot-starter-webflux&lt;/code&gt; starter using Netty by default, support for &lt;code&gt;@WebFluxTest&lt;/code&gt; for testing your reactive controller and reactive data support for MongoDB, Redis and Cassandra&lt;/li&gt;
-  &lt;li&gt;Major dependencies upgrade across the portfolio: &lt;a href="https://spring.io/blog/2017/05/09/spring-data-release-train-kay-m3-released"&gt;Spring Data Kay M3&lt;/a&gt;, &lt;a href="https://spring.io/blog/2017/05/11/spring-security-5-0-0-m1"&gt;Spring Security 5.0 M1&lt;/a&gt;, Spring Integration 5.0 M4, &lt;a href="https://spring.io/blog/2017/05/08/spring-amqp-2-0-0-milestone-4-is-available"&gt;Spring AMQP 2.0 M4&lt;/a&gt;, &lt;a href="https://spring.io/blog/2017/05/11/spring-session-2-0-0-m1-released"&gt;Spring Session 2.0 M1&lt;/a&gt; and &lt;a href="https://spring.io/blog/2017/05/15/spring-batch-4-0-0-m2-is-now-available"&gt;Spring Batch 4.0 M2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Relaxed binding &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0"&gt;has been improved&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a complete list of changes, and upgrade instructions, see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes"&gt;Spring Boot 2.0 Release Notes&lt;/a&gt; on the WIKI and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.0.0.M1/reference/htmlsingle/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to get started and discover those new feature, you can easily bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.0.0.M1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 16th, 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/05/16/this-week-in-spring-may-16th-2017" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-05-16:2928</id>
-    <updated>2017-05-16T09:48:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I am in &lt;a href="https://www.meetup.com/Spring-Meetup-Munich/events/238276763/"&gt;Munich for the Spring Meetup&lt;/a&gt;; Berlin for &lt;a href="https://www.netways.de/?id=2567&amp;L=1"&gt;OSDC&lt;/a&gt;; Krakow for &lt;a href="https://2017.geecon.org/schedule-day2/"&gt;Geecon&lt;/a&gt;; Barcelona for &lt;a href="http://2017.springio.net/"&gt;Spring I/O&lt;/a&gt;, and Eindhoven for &lt;a href="http://nextbuild.nl/speakers/josh-long/"&gt;NextBuild&lt;/a&gt;. If you&amp;rsquo;re around, &lt;a href="http://twitter.com/starbuxman"&gt;say hi&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As usual, we&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s get to it!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Dr. Mark Pollack &lt;a href="https://spring.io/blog/2017/05/15/spring-cloud-data-flow-1-2-ga-released"&gt;just announced Spring Cloud Data Flow 1.2GA!&lt;/a&gt;, including the server editions for local, Kubernetes, YARN and Cloud Foundry. This new release is &lt;em&gt;packed&lt;/em&gt; with good stuff. I particularly like the support for composed tasks, which lets me orchestrate a flow of tasks as a cohesive unit-of-work. This is ideal for complex ETL pipelines. It even includes support for sequential, parallel, and conditional sequence transitions. And, of course, all of this can be mixed-and-matched. Previously, to get this kind of power, you had to manually wire up remote partitioning in a Spring Batch job. Or setup some very complicated Spring Integration flow. And neither would&amp;rsquo;ve given me everything this does. It also includes support for better runtime visibility into what is happening, OAuth support, role-based access, and much more. This is a &lt;em&gt;very&lt;/em&gt; cool release! Get the bits and try it out now!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2017/05/16/spring-boot-2-0-0-m1-available-now"&gt;Spring Boot 2.0M1 has just been released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2017/05/15/spring-batch-4-0-0-m2-is-now-available"&gt;Spring Batch 4 keeps chugging along&lt;/a&gt;! The new milestone includes updates to the Java configuration API (new builders!) and dependdency updates.&lt;/li&gt;
-  &lt;li&gt;Spring REST Docs lead Andy Wilkinson has just &lt;a href="https://spring.io/blog/2017/05/12/spring-rest-docs-1-2-1-release"&gt;published a maintenance release&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Security lead Rob Winch just &lt;a href="https://spring.io/blog/2017/05/11/spring-security-5-0-0-m1"&gt;announced the first Milestone of the new 5.0 line&lt;/a&gt;. The new release includes OAuth 2.0 and OpenID connect 1.0 support as well as reactive integration!&lt;/li&gt;
-  &lt;li&gt;never one to rest, Rob &lt;em&gt;also&lt;/em&gt; announced &lt;a href="https://spring.io/blog/2017/05/11/spring-session-2-0-0-m1-released"&gt;Spring Session 2.0 M1&lt;/a&gt; which integrates with Spring Framework 5.&lt;/li&gt;
-  &lt;li&gt;there are exciting changes a brewin&amp;rsquo; in the new Pivotal Spring education. &lt;a href="https://spring.io/blog/2017/05/10/pivotal-announces-spring-curriculum-certification-changes"&gt;Paul Chapman has the details here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data ninja Mark Paluch &lt;a href="https://spring.io/blog/2017/05/09/spring-data-release-train-kay-m3-released"&gt;just announced Spring Data Kay M3&lt;/a&gt;. This release includes a raft of updates to the various data stores and improved support for reactive tailable cursors in MongoDB, among other things.&lt;/li&gt;
-  &lt;li&gt;check out this example on how to introduce &lt;a href="https://github.com/openzipkin/brave-webmvc-example"&gt;Zipkin into a traditional XML Spring app&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Cereebro, a fine &lt;a href="http://michaeltecourt.github.io/2017/05/14/introducing-cereebro.html"&gt;microservice dashboard that works with Spring Cloud, has just reached 1.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/jambay/status/863228230781685760"&gt;BOSH, which lets you deploy and manage services, has just gotten considerably simpler&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;check out &lt;a href="https://github.com/danielfernandez/reactive-matchday"&gt;this handy Reactive Thymeleaf example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I liked this presentation &lt;a href="https://www.slideshare.net/tobiasflohre/consumer-driven-contract-testing-ein-berblick"&gt;which introduces consumer driven contract testing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Alex Soto is back with a second installment on how to &lt;a href="http://www.lordofthejars.com/2017/05/testing-spring-data-spring-boot.html"&gt;test Spring Boot applications using Arquillian&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This &lt;a href="https://github.com/spring-cloud-stream-app-starters/tensorflow"&gt;Tensorflow integration for Spring Cloud Data Flow looks &lt;em&gt;awesome&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Not strictly Spring specific, but I liked this resource on &lt;a href="https://kotlinlang.org/docs/reference/server-overview.html"&gt;how and where to apply Kotlin on the server side&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>

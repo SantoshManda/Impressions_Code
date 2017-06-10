@@ -20,7 +20,7 @@ angular.module('DoxNotes.controllers.Main', [])
       'Karma'
     ];
 
-     $scope.logout = function($rootScope,$location){
+     $scope.log_out = function($rootScope,$location){
  // $rootScope.logged_in = false ;
   alert("hi");
  // $location.path('#!/');

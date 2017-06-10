@@ -1,43 +1,20 @@
 <div>
 <section class="section container-fluid" style = "overflow-y: auto;
-   height: 1000px;">
-<!-- <table class='table table-hover'>
-	<col width="140">
-	<col width="80">
-    <th>Employee Name</th>
-    <th>Impession Count</th>
-  <div class="panel-group" id="accordion">
-        <tr ng-repeat="x in impressions_data.impressions" ng-class="x.count > 10 ? 'danger' : 'none'">
-        <td>{{x.ename}}</td>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" ng-href="{{'#!/reports#collapse'+x.eid}}">
-        {{x.count}}</a>
-      </h4>
-    </div>
-    <div ng-attr-id="{{'collapse'+x.eid}}" class="panel-collapse collapse in">
-      <div class="panel-body">
-		Hello
-      </div>
-    </div>
-  </div>
-</tr>
-</div>
-</table> -->
+   height: 500px;">
 <table class='table table-hover'>
   <col width="95%">
   <col width="60">
-<th class = "text-success" style =" font-size: 20px;">Employee Name</th>
-    <th class= "text-success" style =" font-size: 20px;" nowrap>Impessions Count</th></table>
-<uib-accordion close-others="false">
+<th class = "text-success" style =" font-size: 17px;" nowrap>Employee Name</th>
+    <th class= "text-success" style =" font-size: 17px;" nowrap>Impessions Count</th></table>
+<uib-accordion close-others="false" style="overflow-y: auto;
+   height: 600px;">
  <div uib-accordion-group class="panel-default"  is-open="false" is-disabled="false" ng-repeat="x in impressions_data.impressions">
-    	<uib-accordion-heading>
+    	<uib-accordion-heading >
     	<table>
-  <col width="100%%">
+  <col width="100%">
   <col width="60">	<th>{{x.ename}}</th><th>{{x.count}}</th></table>
     	</uib-accordion-heading>
-      <table  class ="table table-hover" >
+      <table  class ="table table-hover" style = "overflow-y: scroll;" >
    <col width="45%">
   <col width="45%">
   <col width="45%">
