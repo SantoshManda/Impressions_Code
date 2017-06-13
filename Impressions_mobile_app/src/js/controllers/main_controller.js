@@ -1,5 +1,5 @@
 angular.module('DoxNotes.controllers.Main', [])
-.controller('MainController', function($scope,$http,$location,EmployeeDetails,$rootScope){
+.controller('MainController', function($scope,$http,$location,EmployeeDetails,ImpressionDetails,$rootScope){
 //http://localhost:8089/SpringMVCRestDemo/rest/employees	
   //$http.get('http://10.19.5.82:8089/SpringMVCRestDemo/rest/employees')
 	//$http.get('http://10.75.180.110:8080/Impressions/rest/employees')
@@ -151,7 +151,8 @@ angular.module('DoxNotes.controllers.Main', [])
                 }
             };
     //$http.post('http://10.19.5.82:8089/SpringMVCRestDemo/rest/impressions',jsondata,config)
-    $http.post('http://0.0.0.0:8080/Impressions/rest/impressions',jsondata,config)
+    //$http.post('http://localhost:8080/Impressions/rest/impressions',jsondata,config)
+    ImpressionDetails.putImpressions(jsondata,config)
     .then(function successCallback(response) {
     // this callback will be called asynchronously
     // when the response is available

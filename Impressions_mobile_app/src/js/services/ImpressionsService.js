@@ -1,7 +1,7 @@
 angular.module('DoxNotes')
 .service('ImpressionDetails',function($http){
 
-  var getImpressionsPerEmployee = {
+  return {    
     async : function(){
     return $http.get('http://localhost:8080/Impressions/rest/impressions').then(function (response) {
         // The then function here is an opportunity to modify the response
@@ -9,9 +9,22 @@ angular.module('DoxNotes')
         // The return value gets picked up by the then in the controller.
         return response.data;
       });
+  },
+  putImpressions : function(jsondata,config){
+    return $http.post('http://localhost:8080/Impressions/rest/impressions',jsondata,config).
+    then(function (response) {
+        // The then function here is an opportunity to modify the response
+        //console.log(response);
+        // The return value gets picked up by the then in the controller.
+        return response;
+      })
+    .then(function(response)
+      {
+        return response;
+      });
   }
 };
-
+});
 /*	var impressions_count = {
 "impressions": [
   {
@@ -196,5 +209,3 @@ var impressions_report_data = {
 }
 ],
 };*/
-return getImpressionsPerEmployee;
-})
