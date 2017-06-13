@@ -1,6 +1,7 @@
 package com.dao;
 
-import java.util.Date;
+/*import java.util.ArrayList;
+import java.util.Date;*/
 import java.sql.SQLException;
 //import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,8 @@ import org.hibernate.criterion.Restrictions;
 //import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+/*import java.text.ParseException;
+import java.text.SimpleDateFormat;*/
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.StringType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +56,9 @@ public class ImpressionDaoImpl implements ImpressionDao{
 			
 			@Override
 			public Object doInHibernate(org.hibernate.Session session) throws HibernateException, SQLException {
-				Query query = session.createSQLQuery("select 1 Eid,lower(employee_name) Ename,count(impression_id) iCount from impressions group by lower(employee_name) order by iCount desc").addScalar("Eid",new IntegerType()).addScalar("Ename",new StringType())
+				Query query = session.createSQLQuery("select IFNULL(eid,1) Eid,lower(employee_name) Ename,count(impression_id) iCount from impressions group by lower(employee_name) order by iCount desc").addScalar("Eid",new IntegerType()).addScalar("Ename",new StringType())
 						.addScalar("iCount", new IntegerType());
+				
 				return (List<ImpressionCount>) query.setResultTransformer(Transformers.aliasToBean(com.domain.ImpressionCount.class)).list();
 			}
 		});

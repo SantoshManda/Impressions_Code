@@ -1,0 +1,5 @@
+127.0.0.1 - - [13/Jun/2017:12:24:57 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:12:25:52 +0530] "GET /Impressions/rest/impressions/ HTTP/1.1" 200 476
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:12:27:43 +0530] "GET /Impressions/rest/impressions/ HTTP/1.1" 500 15818
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:12:28:27 +0530] "GET /Impressions/rest/impressions/ HTTP/1.1" 200 2932
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:12:31:13 +0530] "GET /Impressions/rest/impressions/ HTTP/1.1" 200 4960

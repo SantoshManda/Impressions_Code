@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;*/
 import java.sql.Timestamp;
+//import java.util.Iterator;
+
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @XmlRootElement(name = "impression")
 @XmlAccessorType(XmlAccessType.NONE)
-public class Impression {
+public class Impression  {
 	
 	@XmlAttribute(name = "id")
 	private int id;
@@ -130,5 +132,11 @@ public class Impression {
 		return "Impression [id=" + id + " , employee_id = "+ eid +", employee_name=" + employee_name + ", comment=" + comment + ", created_by="
 				+ created_by + ", created_by_empid=" + created_by_empid + ", impression_time=" + impression_time + "]";
 	}
+
+	/*@Override
+	public Iterator iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 	
 }

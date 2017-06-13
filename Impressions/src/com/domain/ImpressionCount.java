@@ -1,5 +1,7 @@
 package com.domain;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 //import javax.xml.bind.annotation.XmlAttribute;
@@ -16,6 +18,16 @@ public class ImpressionCount {
 	private String Ename;
 	@XmlElement(name = "iCount")
 	private int iCount;
+	@XmlElement(name = "impressions_list")
+	private List<Impression> impressions_list;
+	
+	public List<Impression> getImpressionsList() {
+	return impressions_list;
+	}
+	
+	public void setImpressionsList(List<Impression> impressions_list) {
+	this.impressions_list = impressions_list;
+	}
 	
 	public int getEid() {
 		return Eid;

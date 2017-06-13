@@ -1,6 +1,18 @@
 angular.module('DoxNotes')
 .service('ImpressionDetails',function($http){
-	var impressions_count = {
+
+  var getImpressionsPerEmployee = {
+    async : function(){
+    return $http.get('http://localhost:8080/Impressions/rest/impressions').then(function (response) {
+        // The then function here is an opportunity to modify the response
+        //console.log(response);
+        // The return value gets picked up by the then in the controller.
+        return response.data;
+      });
+  }
+};
+
+/*	var impressions_count = {
 "impressions": [
   {
 "count": 17,
@@ -183,15 +195,6 @@ var impressions_report_data = {
 "impression_time": "18-09-2016 04:30:00 PM"
 }
 ],
-};
-return {
-            getImpressionsPerEmployee: function () {
-                return impressions_count;
-            },
-
-            getImpressionsDataPerEmployee : function(){
-              return impressions_report_data;
-            }
-
-        };
+};*/
+return getImpressionsPerEmployee;
 })

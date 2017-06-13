@@ -40,8 +40,12 @@ angular.module('DoxNotes')
 		//}
 }
 
-$scope.employees = EmployeeDetails.getEmployees();
-//console.log($scope.employees);
+//$scope.employees = EmployeeDetails.getEmployees($scope);
+EmployeeDetails.async().then(function(response){
+	$scope.employees = response.employees;
+});
+//console.log($scope.employees);	
+//console.log(this);
 /*[
 {
 "eid": 1,

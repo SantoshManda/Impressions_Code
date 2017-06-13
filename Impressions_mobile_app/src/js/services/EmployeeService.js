@@ -1,18 +1,19 @@
 angular.module('DoxNotes')
 .service('EmployeeDetails',function($http){
-	//$http.get('http://10.75.180.110:8080/Impressions/rest/employees')
-	//.then(function successCallback(response) {
-    // this callback will be called asynchronously
-    // when the response is available
-    //$scope.tempData= response.data.employees;
-    //console.log(response);
-  //}, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  //});
 
+  //var employees ;
+	var getEmployees = {
+    async : function(){
+    return $http.get('http://localhost:8080/Impressions/rest/employees').then(function (response) {
+        // The then function here is an opportunity to modify the response
+        //console.log(response);
+        // The return value gets picked up by the then in the controller.
+        return response.data;
+      });
+	}
+};
 
-  var employees = [
+ /* var employees = [
 {
 "eid": 1,
 "firstName": "Vilkesh Patel"
@@ -33,12 +34,12 @@ angular.module('DoxNotes')
 "eid": 5,
 "firstName": "Santosh Manda"
 }
-];	
+];	*/
 
-return {
+/*return {
             getEmployees: function () {
-                return employees;
+                return this.employees;
             }
-        };
-//return employees;
+        };*/
+return getEmployees;
 })

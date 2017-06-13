@@ -3,8 +3,21 @@ angular.module('DoxNotes')
 {
 /*$rootScope.logged_in = true ;
 $location.path('/reports');*/
-$scope.impressions_data = ImpressionDetails.getImpressionsPerEmployee();
+ImpressionDetails.async().then(function(response){
+	//console.log(response);
+	$scope.impressions_data = response;
+	console.log($scope.impressions_data);
+});
 //console.log($scope.impressions_data);
-$scope.impressions_json = ImpressionDetails.getImpressionsDataPerEmployee();
-console.log($scope.impressions_json);
+
+/*for(var i = 0; i < $scope.impressions_data.length ; i++)
+	{
+
+	ImpressionDataDetails.async($scope.impressions_data[i].eid).then(function(response){
+	//console.log(response);
+	$scope.impressions_json[i] = response;
+});
+}*/
+
+//console.log($scope.impressions_json);
 });

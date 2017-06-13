@@ -29,9 +29,20 @@
   <servlet>
     <servlet-name>springrest</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    
   </servlet>
   <servlet-mapping>
     <servlet-name>springrest</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+  <filter>
+	<filter-name>CorsFilter</filter-name>
+	<filter-class>com.rest.CorsFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>CorsFilter</filter-name>
+	<url-pattern>/rest/*</url-pattern>
+</filter-mapping>
+
+
 </web-app>

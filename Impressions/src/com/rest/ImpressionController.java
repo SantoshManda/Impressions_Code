@@ -1,11 +1,14 @@
 package com.rest;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+//import java.util.ArrayList;
+/*import java.net.URLDecoder;*/
 import java.util.List;
 import com.domain.ImpressionCount;
 import com.domain.ImpressionList;
 import com.domain.ImpressionsCountList;
+
+//import org.hibernate.transform.Transformers;
 
 //import javax.websocket.server.PathParam;
 
@@ -38,6 +41,10 @@ public class ImpressionController {
 		List<ImpressionCount> Impressions = impressionService.getImpressionsCount();
 		ImpressionsCountList I = new ImpressionsCountList();
 		I.setImpressions(Impressions);
+		for(ImpressionCount x  : I.getImpressions())
+		{
+			x.setImpressionsList(impressionService.getImpressionByEmpid(x.getEid()));
+		}
 		return I;
 	}
 	
