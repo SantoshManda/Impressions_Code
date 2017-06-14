@@ -23,7 +23,7 @@
   <body ng-app="DoxNotes" ng-controller="MainController">
   
     <!-- Sidebars -->
-    <div ng-include="'sidebar.html'" 
+    <div ng-include="'sidebar.html'" ng-controller = "LogOutCtrl"
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
@@ -43,7 +43,6 @@
           Impressions
         </div>
         </div>
-        
          <div ng-show = "$rootScope.logged_in">
         Welcome {{$rootScope.name}}
         </div>

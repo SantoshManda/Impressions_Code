@@ -1,23 +1,30 @@
 <div>
+<div class="scrollable">
 <table><tr>
-	<col width="140">
+	<col width="150">
   <col width="80">
   <th colspan="7"><h1 class="app-name">Impressions</h1></th>
- <td><button type="button" align='right' ng-click="log_out()" class="btn btn-info">logout</button></td>
+  <th><button type="button" align='right' ng-click='logout()' class="btn btn-info">logout</button></th>
 </tr></table>
+<div class="scrollable-content">
+    <div class="list-group" ui-turn-off='uiSidebarLeft'>
+      <a class="list-group-item" href="#!/home">Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#!/reports">Reports <i class="fa fa-chevron-right pull-right"></i></a>
 
-</table>
-
-<div class="scrollable">
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="scrollable">
 	
   <h1 class="scrollable-header app-name">Impressions</h1> 
  
   <div class="scrollable-content">
     <div class="list-group" ui-turn-off='uiSidebarLeft'>
-      <!-- <a clss="list-group-item"> {{awesomeThings[0]}} <i class="fa fa-chevron-right pull-right"></i></a> -->
       <a class="list-group-item" href="#!/home">Home <i class="fa fa-chevron-right pull-right"></i></a>
       <a class="list-group-item" href="#!/reports">Reports <i class="fa fa-chevron-right pull-right"></i></a>
+
     </div>
   </div>
-</div>
+</div> -->
 </div>

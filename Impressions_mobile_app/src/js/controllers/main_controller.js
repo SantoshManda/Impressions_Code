@@ -19,12 +19,9 @@ angular.module('DoxNotes.controllers.Main', [])
       'AngularJS',
       'Karma'
     ];
+    
 
-     $scope.log_out = function($rootScope,$location){
- // $rootScope.logged_in = false ;
-  alert("hi");
- // $location.path('#!/');
-}
+     
 //var date = new Date();
 //var tzoffset = (new Date()).getTimezoneOffset() * 60000;
 //var date=(new Date(Date.now() - tzoffset)).toISOString().slice(0,-1);
@@ -121,7 +118,7 @@ angular.module('DoxNotes.controllers.Main', [])
    {
    	$scope.login(employe_name,$rootScope.eid,this.comments_section,$rootScope.name,$rootScope.emp_id,meeting_date);
    }
- }
+ };
 
 
 
@@ -163,7 +160,7 @@ angular.module('DoxNotes.controllers.Main', [])
     // or server returns response with an error status.
     $scope.ErrorResponse = response;
     $scope.showerror=true;
-  });}
+  });};
     //$scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
     
 

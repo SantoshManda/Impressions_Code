@@ -38,7 +38,7 @@ angular.module('DoxNotes')
 		{*/
 			//alert("Login Unsuccessful");
 		//}
-}
+};
 
 //$scope.employees = EmployeeDetails.getEmployees($scope);
 EmployeeDetails.async().then(function(response){
